@@ -36,8 +36,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadAllUsers() {
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
-    });
+    this.userService.getUsers().pipe(first()).subscribe(
+      users => {this.users = users; },
+      err => console.error(err),
+      () => console.log('Users loaded')
+    );
   }
 }

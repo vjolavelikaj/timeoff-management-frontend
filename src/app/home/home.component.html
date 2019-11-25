@@ -1,9 +1,42 @@
 <h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 7!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+<nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <span class="navbar-brand">TimeOff Management</span>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-md-auto d-md-flex">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-key"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Employees</h5>
+          <table class="table">
+            <thead>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col"></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td scope="col"></td>
+                <td scope="col">{{user.username}}</td>
+                <td scope="col">{{user.firstName}}</td>
+                <td scope="col">{{user.lastName}}</td>
+                <td scope="col">
+                  <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
