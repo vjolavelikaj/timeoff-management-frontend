@@ -3,29 +3,38 @@ import { NgModule } from '@angular/core';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AlertComponent } from './_components';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
-import { User } from './_models';
 
-import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UserListComponent } from './admin/user-list/user-list.component';
+import { RequestListComponent } from './admin/request-list/request-list.component';
 
 @NgModule({
   imports: [
+    AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    routing,
+    NgbModule
   ],
   declarations: [
     AppComponent,
     AlertComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    UserComponent,
+    UserListComponent,
+    RequestListComponent
   ],
   providers: [
     AlertService, AuthenticationService, UserService,

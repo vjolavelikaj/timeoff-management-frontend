@@ -1,42 +1,17 @@
-<h1>Hi {{currentUser.firstName}}!</h1>
-<nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <span class="navbar-brand">TimeOff Management</span>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav ml-md-auto d-md-flex">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-key"></i> Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Employees</h5>
-          <table class="table">
-            <thead>
-              <th scope="col">#</th>
-              <th scope="col">Username</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col"></th>
-            </thead>
-            <tbody>
-              <tr *ngFor="let user of users">
-                <td scope="col"></td>
-                <td scope="col">{{user.username}}</td>
-                <td scope="col">{{user.firstName}}</td>
-                <td scope="col">{{user.lastName}}</td>
-                <td scope="col">
-                  <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+<nav id="#nav" class="navbar navbar-expand-md navbar-dark bg-dark">
+    <!-- Go back to home -->
+    <b><a class="navbar-brand" href="#">TimeOff Management</a></b>
+    <div class="collapse navbar-collapse justify-content-between">
+        <button class="btn btn-outline-primary" href="#">Manage your stuff</button>
+        <button class="btn btn-outline-warning" (click)="logout()">Logout</button>
+        <!-- <button class="btn btn-outline-warning" (click)="open('focusFirst')">Logout</button> -->
     </div>
-  </div>
-</div> -->
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello {{currentUser.name}}!</h1>
+    </div>
+    <div *ngIf="clicked">
+        <!-- <router-outlet></router-outlet> -->
+    </div>
+</div>

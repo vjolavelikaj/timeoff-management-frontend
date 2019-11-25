@@ -15,15 +15,15 @@ export class UserService {
     }
 
     getById(id: number) {
-        return this.http.get(`/users/${id}`);
+        return this.http.get<User>(`/users/${id}`);
     }
 
     register(user: User) {
-        return this.http.post(`/users/register`, user);
+        return this.http.post<User>(`/users/register`, user);
     }
 
     update(user: User) {
-        return this.http.put(`/users/${user.id}`, user);
+        return this.http.put<User>(`/users/${user.id}`, user);
     }
 
     delete(id: number) {

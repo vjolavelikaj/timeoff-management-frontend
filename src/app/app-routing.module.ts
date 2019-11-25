@@ -3,23 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { AuthGuard } from './_guards';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+
+const routes: Routes = [
+  {
+    path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
+      { path: 'admin', component: AdminComponent },
+      { path: 'user', component: UserComponent },
+    ]
+  },
+  { path: 'login', component: LoginComponent },
 
 
-const routes: Routes = [];
+  // 
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent},
-
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
-];
-
-export const routing = RouterModule.forRoot(appRoutes);

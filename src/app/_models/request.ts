@@ -1,4 +1,4 @@
-export interface User {
+export interface Request {
     id: number;
     name: string;
     surname: string;
@@ -6,5 +6,4 @@ export interface User {
     password: string;
     position: string;
     role: string;
-    token: string;
 }
